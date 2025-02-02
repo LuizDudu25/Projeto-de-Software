@@ -189,21 +189,21 @@ def manage_wards():
     else:
         print(f"O quarto {ward} está DISPONÍVEL.")
     
-    patient_id = int(input("ID do paciente: "))
-    if patient_id in hospital_data["patients"]:
-        hospital_data["wards"][ward] = patient_id
-        print(f"Paciente {patient_id} alocado no quarto {ward}.")
-    else:
-        print("\nID do paciente nao encontrado\n")
-        print("Deseja criar um ID?")
-        print("(1) Sim")
-        print("(2) Nao\n")
+        patient_id = int(input("ID do paciente: "))
+        if patient_id in hospital_data["patients"]:
+            hospital_data["wards"][ward] = patient_id
+            print(f"Paciente {patient_id} alocado no quarto {ward}.")
+        else:
+            print("\nID do paciente nao encontrado\n")
+            print("Deseja criar um ID?")
+            print("(1) Sim")
+            print("(2) Nao\n")
 
-        choice = input()
+            choice = input()
 
-        if choice == "1":
-            register_patient()
-            return
+            if choice == "1":
+                register_patient()
+                return
 
     input("\nPressione ENTER para prosseguir")
 
